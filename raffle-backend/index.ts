@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import { TimeService } from './services/time.service';
 import { UserService } from './services/user.service';
 import { User } from './models/user';
+import cors from 'cors';
 
 dotenv.config();
 class RaffleSerer {
@@ -35,6 +36,7 @@ class RaffleSerer {
   }
 
   addMiddlewares() {
+    this.app.use(cors());
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.static('public'));

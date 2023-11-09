@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const time_service_1 = require("./services/time.service");
 const user_service_1 = require("./services/user.service");
+const cors_1 = __importDefault(require("cors"));
 dotenv_1.default.config();
 class RaffleSerer {
     constructor() {
@@ -25,6 +26,7 @@ class RaffleSerer {
         this.isDev = true;
     }
     addMiddlewares() {
+        this.app.use((0, cors_1.default)());
         this.app.use(express_1.default.json());
         this.app.use(express_1.default.urlencoded({ extended: true }));
         this.app.use(express_1.default.static('public'));
