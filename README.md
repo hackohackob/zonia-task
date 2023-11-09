@@ -85,5 +85,19 @@ or
 
 
 ### Frontend:
+* The app uses PrimeNG for the UI components
 * The frontend is an Angular app that uses the REST API to get the remaining time and to get the winner.
+* There are 2 routes for the 2 views - time-left and winning-user. All other routes redirect to time-left
+  * winning-user has AuthGuard that checks if the time has expired and redirects to time-left if it has not
+* There is a menu with 2 buttons - one for each view
+  * The winning-user button is disabled if the time has not expired
+* There are 2 main services - time.service.ts and user.service.ts
+  * time.service provides data about when time will expire and if it has expired - it has both Observables to notify you when time has expired and boolean "flag" to check if the time has expired
+  * user.service simply fetches the winning user from the backend
+* Responses from the server are typed
+* If time expired while the user is on the time-left page, the button in the menu will be activated and new button will be shown on the page to open the winning-user page
+
+
+
+
 
