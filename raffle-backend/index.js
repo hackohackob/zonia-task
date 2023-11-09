@@ -62,6 +62,9 @@ class RaffleSerer {
                 timeLeftUntilNextRaffleMs: this.timeService.getTimeLeftUntilNextRaffle()
             });
         });
+        this.app.get('*', (req, res) => {
+            res.sendFile(__dirname + '/public/index.html');
+        });
         if (this.isDev) {
             // this is a dev endpoint that will expire the time until the next raffle
             // should be used only for testing purposes
