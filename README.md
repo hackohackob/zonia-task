@@ -1,7 +1,9 @@
 # Zonia interview task
 ## Preview:
-<img src="time-left-page.png" style="width:49%">
-<img src="winning-user-page.png" style="width:49%">
+<div style="font-size:0">
+ <img src="time-left-page.png" style="width:49%; display:inline-block;">
+ <img src="winning-user-page.png" style="width:49%;display:inline-block;">
+</div>
 
 ## Requirements:
 You can find the full requirements in the Task.pdf file.
