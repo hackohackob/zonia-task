@@ -1,0 +1,15 @@
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  p-card::ng-deep {
+    width: 50rem;
+    text-align: center;
+
+    .p-card-content {
+      font-size: 3rem;
+    }
+  }
+}

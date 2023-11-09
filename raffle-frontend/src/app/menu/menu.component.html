@@ -1,3 +1,7 @@
-<div class="layout-sidebar">
-  <p-menu [model]="items"></p-menu>
+<div class="layout-menu-container">
+  <ul class="layout-menu">
+    <li *ngFor="let item of items" [class.disabled]="item.isDisabled">
+      <i class="{{item.icon}}" [routerLink]="!item.isDisabled && item.routerLink" [ariaDisabled]="item.isDisabled"></i>
+    </li>
+  </ul>
 </div>

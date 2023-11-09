@@ -1,1 +1,12 @@
-<p>winning-user works!</p>
+<div class="p-3 card-wrapper">
+  <p-card header="Pick Winner">
+    <div class="m-0">
+      <p-button (onClick)="getWinningUser()">Fetch winning user</p-button>
+      <div>
+        <span *ngIf="winningUser">
+          <p-chip [label]="winningUserFullName"></p-chip>
+        </span>
+      </div>
+    </div>
+  </p-card>
+</div>

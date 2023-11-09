@@ -1,2 +1,16 @@
-<p>time-left works!</p>
-{{timeOfNextRaffle | async}}
+<div class="p-3 card-wrapper">
+  <p-card header="Time Remaining">
+    <p class="m-0">
+      <p-progressSpinner *ngIf="!(timeService.$timeRemaining| async)"></p-progressSpinner>
+      <span *ngIf="(timeService.$timeRemaining| async) && !(timeService.hasTimerExpired)">
+        {{$timeOfNextRaffleMessage| async}}
+      </span>
+    </p>
+    <div>
+      <span *ngIf="(timeService.$timeRemaining| async) && (timeService.hasTimerExpired)">
+        <div>Timer Expired</div>
+        <p-button (click)="goToWinningUser()">Select a user</p-button>
+      </span>
+    </div>
+  </p-card>
+</div>
